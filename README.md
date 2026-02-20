@@ -21,28 +21,16 @@ A complete ML pipeline that predicts annual rental prices for residential proper
 ---
 ### Key Components
 
-**1. Data Cleaning**
-- Filtered 73K+ UAE property records down to 23K Abu Dhabi listings  
-- Removed extreme outliers (rent > 2M AED)  
-- Handled missing coordinates & inconsistent categorical labels  
-
-**2. Feature Engineering**
-- Created `Total_Rooms` and `Room_Density` as livability proxies  
-- Standardized furnishing labels  
-- Grouped rare property types to prevent overfitting  
-
-**3. Location Encoding**
-- Implemented smoothed target encoding for 85 neighborhoods  
-- Prevented leakage using smoothing & minimum sample thresholds  
-
-**4. Model Comparison**
-- Compared Linear Regression, Ridge, Random Forest, Gradient Boosting, Segmented RF and Neural Network (MLP)  
-
-**5. Error Analysis**
-- Identified higher error in top 10% luxury segment  
-- Tested segmented modeling approach  
+| Stage | What I Did |
+|-------|-----------|
+| **Data Cleaning** | Filtered 73K+ UAE property records down to 23K Abu Dhabi listings; removed extreme outliers (rentals &gt;2M AED); handled missing coordinates and inconsistent categorical labels |
+| **Feature Engineering** | Created `Total_Rooms` and `Room_Density` as livability proxies; standardized furnishing labels across inconsistent text formats; grouped rare property types to prevent overfitting |
+| **Location Encoding** | Implemented smoothed target encoding for 85 neighborhoods to capture spatial price effects without data leakage |
+| **Model Comparison** | Trained and evaluated 5 approaches: Linear Regression, Ridge Regression, Random Forest, Gradient Boosting, and Neural Network |
+| **Error Analysis** | Analyzed where models fail—discovered luxury properties (top 10%) have 5.5x higher prediction errors, leading to a segmented modeling experiment |
 
 ---
+
 
 ## The Data
 
