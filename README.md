@@ -89,6 +89,39 @@ This suggests renters prioritize *functional comfort* (bathrooms, usable space) 
 Error analysis showed prediction accuracy degrades significantly for luxury properties (top price decile). I tried training separate models for normal vs luxury segments, but the global Random Forest actually performed better, suggesting the single ensemble already captures segment differences effectively or perhaps that the luxury segment has genuinely higher irreducible variance due to unobserved features (views, specific building amenities, etc.)
 
 ---
+---
+
+## Experimental Setup
+
+- **Train/Test Split:** 80/20
+- **Target Variable:** Log-transformed annual rent
+- **Evaluation Metrics:** RMSE (primary), MAE, R²
+- **Model Validation:** 5-fold cross-validation used during model comparison
+- **Reproducibility:** Fixed random_state across experiments
+
+The goal was not only predictive performance, but stability and generalization across unseen listings.
+
+---
+
+## Limitations
+
+- No external economic indicators (income distribution, proximity to amenities, transport hubs).
+- Latitude/longitude removed — no explicit geospatial distance modeling.
+- Luxury segment (top price decile) exhibits higher irreducible variance.
+- Dataset reflects listing prices, not final transaction prices.
+- Unobserved variables such as building view, interior quality, or specific amenities are not captured.
+
+---
+
+## Future Work
+
+- Systematic hyperparameter tuning for ensemble models.
+- Incorporate geospatial clustering or distance-based features.
+- Apply SHAP or permutation importance for deeper interpretability.
+- Explore segmented or hierarchical modeling approaches.
+- Introduce time-aware modeling if longitudinal listing data becomes available.
+
+--- 
 
 ## Technical Choices I Made
 
