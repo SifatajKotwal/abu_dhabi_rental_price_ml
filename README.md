@@ -89,7 +89,6 @@ This suggests renters prioritize *functional comfort* (bathrooms, usable space) 
 Error analysis showed prediction accuracy degrades significantly for luxury properties (top price decile). I tried training separate models for normal vs luxury segments, but the global Random Forest actually performed better, suggesting the single ensemble already captures segment differences effectively or perhaps that the luxury segment has genuinely higher irreducible variance due to unobserved features (views, specific building amenities, etc.)
 
 ---
----
 
 ## Experimental Setup
 
